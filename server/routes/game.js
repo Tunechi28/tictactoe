@@ -14,3 +14,5 @@ router.post('/winner',
 router.post('/move',
   nextMove
 );
+
+module.exports = router;

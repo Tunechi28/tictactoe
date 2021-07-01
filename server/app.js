@@ -1,5 +1,6 @@
 const express = require('express');
-const createErrors = require('http-errors');
+const createError = require('http-errors');
+const game = require('../server/routes/game')
 
 
 module.exports = (config) => {
@@ -8,6 +9,8 @@ module.exports = (config) => {
     // body parser middlewares
     app.use(express.urlencoded({extended : true}));
     app.use(express.json())
+
+    app.use('/tictactoe', game)
 
     
      // catch 404 and forward to error handler
